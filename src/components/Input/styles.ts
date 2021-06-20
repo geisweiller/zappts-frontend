@@ -24,6 +24,6 @@ export const CustomInput = styled.input`
   padding: ${verticalSpacing.xs} ${horizontalSpacing.xs2};
 
   ::placeholder {
-  color: ${(props) => (props.theme === true ? colors.red : colors.black)};
+    color: ${(props) => (props.theme === true ? colors.red : colors.black)};
   }
 `;

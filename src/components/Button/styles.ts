@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { borderRadius, colors, horizontalSpacing, verticalSpacing } from '../../constants/theme';
 
-
 export const CustomButton = styled.button`
   align-self: center;
   background-color: ${colors.darkGrey};
@@ -12,6 +11,6 @@ export const CustomButton = styled.button`
   margin: ${verticalSpacing.sm};
 
   :hover {
-    opacity:	0.8;
+    opacity: 0.8;
   }
 `;

@@ -15,7 +15,7 @@ export const Button = styled.button`
   :hover {
     box-shadow: 0px 3px 6px ${colors.darkGrey};
   }
-  img { 
+  img {
     margin-right: ${horizontalSpacing.xs};
   }
-`;  
+`;

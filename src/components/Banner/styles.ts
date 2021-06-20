@@ -1,10 +1,15 @@
 import styled from 'styled-components';
-import { borderRadius, colors, fontSizes, horizontalSpacing, verticalSpacing } from '../../constants/theme';
-
+import {
+  borderRadius,
+  colors,
+  fontSizes,
+  horizontalSpacing,
+  verticalSpacing,
+} from '../../constants/theme';
 
 export const Container = styled.div`
   background-color: ${colors.green};
-  height: 100%;	
+  height: 100%;
 
   .slick-dots li.slick-active button:before {
     opacity: 1;
@@ -33,7 +38,7 @@ export const SliderContent = styled.div`
 
   img {
     width: ${horizontalSpacing.xxl};
-      height: auto;
+    height: auto;
     margin-bottom: ${verticalSpacing.sm};
   }
 

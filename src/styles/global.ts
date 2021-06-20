@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { fontWeight } from "../constants/theme";
+import { createGlobalStyle } from 'styled-components';
+import { fontWeight } from '../constants/theme';
 
 export default createGlobalStyle`
 * {

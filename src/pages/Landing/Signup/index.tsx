@@ -1,8 +1,18 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import * as EmailValidator from 'email-validator';
-import { Input, Button, Banner, GoogleButton, Separator, Logo } from '../../../components'
-import { Container, Content, WelcomeMessage, Footer, RightContainer, LeftContainer, Wrapper } from './styles'
+import { toast } from 'react-toastify';
+import { Input, Button, Banner, GoogleButton, Separator, Logo } from '../../../components';
+import {
+  Container,
+  Content,
+  WelcomeMessage,
+  Footer,
+  RightContainer,
+  LeftContainer,
+  Wrapper,
+} from './styles';
+import { useUserContext } from '../../../hooks/userContext';
 
 export default function SignUp() {
   const [name, setName] = useState('');
@@ -12,29 +22,39 @@ export default function SignUp() {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasError, setHasError] = useState(false);
-
-  function handleSignUp() {
-    if(!name) {
+  const { signUp } = useUserContext();
+  async function handleSignUp() {
+    if (!name) {
       setNameError('Name field can not me empty');
     }
-    if(!email) {
-      setEmailError('E-mail field can not be empty')
-      setHasError(true);
-    } else if (!EmailValidator.validate(email)) {
-      setEmailError('Please check your email')
+    if (!email) {
+      setEmailError('E-mail field can not be empty');
       setHasError(true);
     }
-    if(!password) {
-      setPasswordError('Password field can not be empty')
+    if (!EmailValidator.validate(email)) {
+      setEmailError('Please check your email');
       setHasError(true);
     }
-
-    //Corpo da requisição para o servidor com os dados de Signup
+    if (!password) {
+      setPasswordError('Password field can not be empty');
+      setHasError(true);
+    }
+    if (password.length < 6) {
+      setPasswordError('Password must have at least 6 characters');
+      setHasError(true);
+    }
+    if (name && EmailValidator.validate(email) && password.length >= 6) {
+      setHasError(false);
+      setNameError('');
+      setEmailError('');
+      setPasswordError('');
+      await signUp({ name, email, password });
+    }
   }
   return (
     <Wrapper>
       <LeftContainer>
-      <Banner />
+        <Banner />
       </LeftContainer>
       <RightContainer>
         <Container>
@@ -42,39 +62,41 @@ export default function SignUp() {
           <Content>
             <WelcomeMessage>Getting Started</WelcomeMessage>
             <form>
-              <Input 
-                label="Full Name" 
-                placeholder="Enter your username or email" 
+              <Input
+                label="Full Name"
+                placeholder="Enter your username or email"
                 nameError={nameError}
                 hasError={hasError}
-                onChange={event => setName(event.target.value)}
+                onChange={(event) => setName(event.target.value)}
               />
-              <Input 
+              <Input
                 label="Users name or Email"
                 type="email"
-                placeholder="Enter your username or email" 
+                placeholder="Enter your username or email"
                 emailError={emailError}
                 hasError={hasError}
-                onChange={event => setEmail(event.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
               />
-              <Input 
-                label="Create Password" 
+              <Input
+                label="Create Password"
                 type="password"
-                placeholder="***********" 
+                placeholder="***********"
                 passwordError={passwordError}
                 hasError={hasError}
-                onChange={event => setPassword(event.target.value)}
+                onChange={(event) => setPassword(event.target.value)}
               />
               <Button onClick={handleSignUp}>Sign up</Button>
             </form>
-            <Separator/>
+            <Separator />
             <GoogleButton text="Sign up with Google" />
             <Footer>
-              <p>By signing up, you agree to <strong>Invision</strong></p>
+              <p>
+                By signing up, you agree to <strong>Invision</strong>
+              </p>
               <div>
                 <Link to="/terms">Terms and conditions</Link>
                 <p>and</p>
-                <Link to="/privacypolicy">Privacy Policy</Link> 
+                <Link to="/privacypolicy">Privacy Policy</Link>
               </div>
               <div className="hasAccount">
                 <p>Already on Invision?</p>
@@ -85,5 +107,5 @@ export default function SignUp() {
         </Container>
       </RightContainer>
     </Wrapper>
-  )
+  );
 }

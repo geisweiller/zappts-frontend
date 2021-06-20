@@ -1,25 +1,31 @@
 import styled from 'styled-components';
-import { colors, fontSizes, horizontalSpacing, verticalSpacing, viewPort } from '../../../constants/theme';
+import {
+  colors,
+  fontSizes,
+  horizontalSpacing,
+  verticalSpacing,
+  viewPort,
+} from '../../../constants/theme';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  @media(max-width: ${viewPort.mobile}) {
+  @media (max-width: ${viewPort.mobile}) {
     flex-direction: column;
   }
 `;
 
 export const RightContainer = styled.div`
   width: 50%;
-  @media(max-width: ${viewPort.mobile}) {
+  @media (max-width: ${viewPort.mobile}) {
     width: 100%;
   }
 `;
 
 export const LeftContainer = styled.div`
   width: 50%;
-  @media(max-width: ${viewPort.mobile}) {
+  @media (max-width: ${viewPort.mobile}) {
     width: 100%;
   }
 `;
@@ -38,7 +44,7 @@ export const Content = styled.div`
   justify-content: center;
   height: 100%;
   width: 50%;
-  @media(max-width: ${viewPort.mobile}) {
+  @media (max-width: ${viewPort.mobile}) {
     width: 75%;
   }
 
@@ -60,7 +66,7 @@ export const Footer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: ${verticalSpacing.sm};
-  @media(max-width: ${viewPort.mobile}) {
+  @media (max-width: ${viewPort.mobile}) {
     width: ${horizontalSpacing.full};
   }
 
@@ -69,17 +75,26 @@ export const Footer = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    @media (max-width: ${viewPort.laptop}) {
+      a {
+        font-size: ${fontSizes.xs};
+      }
+    }
   }
 
-  div.hasAccount{
+  div.hasAccount {
     margin-top: ${verticalSpacing.sm};
   }
 
   p {
     margin: 0 4px;
     font-size: ${fontSizes.sm};
+    @media (max-width: ${viewPort.laptop}) {
+      font-size: ${fontSizes.xs};
+    }
   }
-  
+
   a {
     color: ${colors.green};
     font-size: ${fontSizes.md};

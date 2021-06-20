@@ -5,10 +5,13 @@ import {
   fontSizes,
   horizontalSpacing,
   verticalSpacing,
+  viewPort,
 } from '../../constants/theme';
 
 export const CustomButton = styled.button`
   display: flex;
+  align-items: center;
+  justify-content: center;
   align-self: center;
   background-color: ${colors.darkGrey};
   color: ${colors.white};
@@ -20,5 +23,10 @@ export const CustomButton = styled.button`
 
   :hover {
     opacity: 0.8;
+  }
+
+  @media (max-width: ${viewPort.mobile}) {
+    padding: ${verticalSpacing.xs3} ${horizontalSpacing.lg};
+    font-size: ${fontSizes.sm};
   }
 `;

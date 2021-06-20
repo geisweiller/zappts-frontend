@@ -5,6 +5,7 @@ import {
   fontSizes,
   horizontalSpacing,
   verticalSpacing,
+  viewPort,
 } from '../../constants/theme';
 
 export const Button = styled.button`
@@ -23,9 +24,16 @@ export const Button = styled.button`
   }
   img {
     margin-right: ${horizontalSpacing.xs};
+    @media (max-width: ${viewPort.mobile}) {
+      margin-left: ${horizontalSpacing.sm};
+    }
   }
 
   p {
     font-size: ${fontSizes.md2};
+    @media (max-width: ${viewPort.mobile}) {
+      font-size: ${fontSizes.sm};
+      padding: ${verticalSpacing.xs} ${horizontalSpacing.sm};
+    }
   }
 `;

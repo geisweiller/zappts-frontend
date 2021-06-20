@@ -42,6 +42,8 @@ export const horizontalSpacing = {
   xs2: '2vw',
   sm2: '3vw',
   sm: '4vw',
+  md: '6vw',
+  lg: '12vw',
   xxl: '32vw',
   full: '100vw',
 };

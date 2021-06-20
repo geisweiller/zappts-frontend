@@ -35,5 +35,8 @@ export const Button = styled.button`
       font-size: ${fontSizes.sm};
       padding: ${verticalSpacing.xs} ${horizontalSpacing.sm};
     }
+    @media (max-width: ${viewPort.laptop}) {
+      font-size: ${fontSizes.sm};
+    }
   }
 `;

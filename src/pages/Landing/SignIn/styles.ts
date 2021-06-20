@@ -78,10 +78,16 @@ export const Footer = styled.div`
   p {
     margin-right: 4px;
     font-size: ${fontSizes.sm};
+    @media (max-width: ${viewPort.laptop}) {
+      font-size: ${fontSizes.sm};
+    }
   }
 
   a {
     color: ${colors.green};
     font-size: ${fontSizes.md};
+    @media (max-width: ${viewPort.laptop}) {
+      font-size: ${fontSizes.sm};
+    }
   }
 `;

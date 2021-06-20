@@ -29,4 +29,8 @@ export const CustomButton = styled.button`
     padding: ${verticalSpacing.xs3} ${horizontalSpacing.lg};
     font-size: ${fontSizes.sm};
   }
+  @media (max-width: ${viewPort.laptop}) {
+    padding: ${verticalSpacing.xs3} ${horizontalSpacing.sm};
+    font-size: ${fontSizes.sm};
+  }
 `;

@@ -26,7 +26,7 @@ describe('SignIn Page', () => {
     const { getByPlaceholderText, getByText } = render(<SignIn />);
 
     const emailField = getByPlaceholderText('Enter your username or email');
-    const passwordField = getByPlaceholderText('Enter your password');
+    const passwordField = getByPlaceholderText('*************');
     const buttonElement = getByText('Sign in');
 
     fireEvent.change(emailField, { target: { value: 'geisweiller@gmail.com' } });
@@ -38,7 +38,7 @@ describe('SignIn Page', () => {
     const { getByPlaceholderText, getByText } = render(<SignIn />);
 
     const emailField = getByPlaceholderText('Enter your username or email');
-    const passwordField = getByPlaceholderText('Enter your password');
+    const passwordField = getByPlaceholderText('*************');
     const buttonElement = getByText('Sign in');
 
     fireEvent.change(emailField, { target: { value: 'invalid@teste.com' } });

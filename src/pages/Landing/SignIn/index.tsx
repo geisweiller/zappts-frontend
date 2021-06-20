@@ -62,7 +62,7 @@ export default function SignIn() {
               <Input
                 label="Password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="*************"
                 hasError={hasError}
                 onChange={(event) => setPassword(event.target.value)}
                 passwordError={passwordError}

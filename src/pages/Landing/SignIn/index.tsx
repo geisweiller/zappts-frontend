@@ -37,6 +37,7 @@ export default function SignIn() {
     if (EmailValidator.validate(email) && password) {
       setEmailError('');
       setPasswordError('');
+      setHasError(false);
       await signIn({ email, password });
     }
   }

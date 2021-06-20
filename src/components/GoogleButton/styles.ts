@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import { borderRadius, colors, horizontalSpacing, verticalSpacing } from '../../constants/theme';
+import {
+  borderRadius,
+  colors,
+  fontSizes,
+  horizontalSpacing,
+  verticalSpacing,
+} from '../../constants/theme';
 
 export const Button = styled.button`
   display: flex;
@@ -17,5 +23,9 @@ export const Button = styled.button`
   }
   img {
     margin-right: ${horizontalSpacing.xs};
+  }
+
+  p {
+    font-size: ${fontSizes.md2};
   }
 `;

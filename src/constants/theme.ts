@@ -11,6 +11,7 @@ export const fontSizes = {
   xs: '0.7rem',
   sm: '0.875rem',
   md: '1rem',
+  md2: '1.125rem',
   lg: '1.25rem',
   xl: '1.875rem',
   xxl: '2.188rem',
@@ -29,6 +30,7 @@ export const fontWeight = {
 
 export const verticalSpacing = {
   xs: '1vh',
+  xs3: '1.5vh',
   xs2: '2vh',
   sm: '4vh',
   md2: '6vh',

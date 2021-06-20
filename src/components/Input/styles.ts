@@ -25,5 +25,6 @@ export const CustomInput = styled.input`
 
   ::placeholder {
     color: ${(props) => (props.theme === true ? colors.red : colors.black)};
+    font-size: ${fontSizes.md};
   }
 `;

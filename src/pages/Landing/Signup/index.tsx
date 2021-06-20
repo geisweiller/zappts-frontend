@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as EmailValidator from 'email-validator';
-import { toast } from 'react-toastify';
 import { Input, Button, Banner, GoogleButton, Separator, Logo } from '../../../components';
 import {
   Container,

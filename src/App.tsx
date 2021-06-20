@@ -7,13 +7,15 @@ import { UserProvider } from './hooks/userContext';
 
 function App() {
   return (
-    <UserProvider>
+    <>
       <GlobalStyle />
       <BrowserRouter>
-        <Routes />
-        <ToastContainer />
+        <UserProvider>
+          <Routes />
+          <ToastContainer />
+        </UserProvider>
       </BrowserRouter>
-    </UserProvider>
+    </>
   );
 }
 

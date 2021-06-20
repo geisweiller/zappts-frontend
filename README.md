@@ -1,4 +1,4 @@
-# React Native Code Challenge
+# Teste Zappts Frontend
 
 ## Instruções:
 

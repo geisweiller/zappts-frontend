@@ -5,11 +5,18 @@ import {
   fontSizes,
   horizontalSpacing,
   verticalSpacing,
+  viewPort,
 } from '../../constants/theme';
 
 export const Container = styled.div`
   background-color: ${colors.green};
   height: 100%;
+
+  .slick-dots {
+    @media (max-width: ${viewPort.mobile}) {
+      margin-bottom: ${verticalSpacing.sm};
+    }
+  }
 
   .slick-dots li.slick-active button:before {
     opacity: 1;
@@ -18,6 +25,9 @@ export const Container = styled.div`
     border-radius: 20px;
 
     transition: width 0.35s ease-in-out;
+    @media (max-width: ${viewPort.mobile}) {
+      width: ${horizontalSpacing.sm};
+    }
   }
 
   .slick-dots li button:before {
@@ -46,6 +56,9 @@ export const SliderContent = styled.div`
     margin-bottom: ${verticalSpacing.xs2};
     font-size: ${fontSizes.xl};
     color: ${colors.white};
+    @media (max-width: ${viewPort.mobile}) {
+      text-align: center;
+    }
   }
 
   p {
@@ -53,5 +66,8 @@ export const SliderContent = styled.div`
     color: ${colors.white};
     padding: 0 ${horizontalSpacing.sm};
     text-align: center;
+    @media (max-width: ${viewPort.mobile}) {
+      font-size: ${fontSizes.md};
+    }
   }
 `;

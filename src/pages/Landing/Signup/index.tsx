@@ -64,7 +64,7 @@ export default function SignUp() {
             <form>
               <Input
                 label="Full Name"
-                placeholder="Enter your username or email"
+                placeholder="Enter your name"
                 nameError={nameError}
                 hasError={hasError}
                 onChange={(event) => setName(event.target.value)}

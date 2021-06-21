@@ -7,6 +7,11 @@ export const colors = {
   red: '#EF476F',
 };
 
+export const fontFamily = {
+  lato: 'Lato',
+  muli: 'Muli',
+};
+
 export const fontSizes = {
   xs: '0.7rem',
   sm: '0.875rem',

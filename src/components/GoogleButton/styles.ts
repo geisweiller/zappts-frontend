@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   borderRadius,
   colors,
+  fontFamily,
   fontSizes,
   horizontalSpacing,
   verticalSpacing,
@@ -31,6 +32,7 @@ export const Button = styled.button`
 
   p {
     font-size: ${fontSizes.md2};
+    font-family: ${fontFamily.lato};
     @media (max-width: ${viewPort.mobile}) {
       font-size: ${fontSizes.sm};
       padding: ${verticalSpacing.xs} ${horizontalSpacing.sm};
